@@ -395,3 +395,37 @@
     font-family: var(--font-display);
     color: var(--color-text);
 }
+/* ══════════════════════════════════════
+   Mobile fixes adicionales (appended)
+══════════════════════════════════════ */
+
+/* Post card en móvil: sin rotación que cause overflow */
+@media (max-width: 480px) {
+    .post-card:hover {
+        transform: translateY(-4px) rotate(0deg);
+    }
+
+    .post-image {
+        aspect-ratio: 4 / 3; /* Un poco más ancho en móvil */
+    }
+
+    .post-author {
+        font-size: var(--font-size-base);
+    }
+
+    /* Botones de acción más fáciles de tocar */
+    .post-action-btn {
+        width: 42px;
+        height: 42px;
+        font-size: var(--font-size-xl);
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .form-actions .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
