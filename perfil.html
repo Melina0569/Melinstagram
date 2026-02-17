@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Perfil - Melinstagram</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+    <!-- CSS compartidos (mismos que index.html) -->
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- CSS exclusivo del perfil -->
+    <link rel="stylesheet" href="css/perfil.css">
+</head>
+<body>
+
+    <!-- Header (igual al de index.html para consistencia) -->
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo" style="-webkit-text-fill-color:transparent">Melinstagram</a>
+            <a href="index.html" class="btn-back">
+                <span>←</span> Volver al Feed
+            </a>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+
+            <!-- Tarjeta de perfil -->
+            <section class="profile-card fade-in">
+
+                <!-- Fondo decorativo -->
+                <div class="profile-banner"></div>
+
+                <!-- Avatar -->
+                <div class="profile-avatar-wrapper">
+                    <img
+                        src="https://api.dicebear.com/7.x/adventurer/svg?seed=pixelsnap"
+                        alt="Foto de perfil"
+                        class="profile-avatar"
+                        id="profileAvatar"
+                    >
+                    <div class="profile-avatar-ring"></div>
+                </div>
+
+                <!-- Info del perfil -->
+                <div class="profile-info">
+                    <h1 class="profile-name" id="profileName">Mi Perfil</h1>
+                    <p class="profile-bio" id="profileBio">✨ Compartiendo momentos especiales</p>
+
+                    <!-- Stats -->
+                    <div class="profile-stats">
+                        <div class="stat">
+                            <span class="stat-number" id="statPosts">0</span>
+                            <span class="stat-label">Publicaciones</span>
+                        </div>
+                    </div>
+
+                    <!-- Botón editar perfil -->
+                    <button class="btn-edit-profile" id="btnEditProfile">
+                        ✏️ Editar Perfil
+                    </button>
+                </div>
+            </section>
+
+            <!-- Separador -->
+            <div class="section-divider">
+                <span>Publicaciones</span>
+            </div>
+
+            <!-- Grid de publicaciones -->
+            <div class="profile-grid" id="profileGrid">
+                <!-- Se llena dinámicamente -->
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Modal editar perfil -->
+    <div class="modal" id="editProfileModal">
+        <div class="modal-overlay" id="editModalOverlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" id="editModalClose">&times;</button>
+            <h2 class="modal-title">Editar Perfil</h2>
+
+            <form id="editProfileForm">
+                <div class="form-group">
+                    <label for="editName">Nombre</label>
+                    <input type="text" id="editName" class="form-input" placeholder="Tu nombre">
+                </div>
+                <div class="form-group">
+                    <label for="editBio">Bio</label>
+                    <textarea id="editBio" class="form-textarea" rows="3"
+                        placeholder="Cuéntanos algo sobre ti..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="editAvatar">URL de foto de perfil</label>
+                    <input type="url" id="editAvatar" class="form-input"
+                        placeholder="https://ejemplo.com/foto.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="filterAuthor">Filtrar mis posts por autor</label>
+                    <input type="text" id="filterAuthor" class="form-input"
+                        placeholder="Escribe tu nombre de autor">
+                </div>
+                <div class="form-actions">
+                    <button type="button" class="btn btn-secondary" id="editBtnCancel">Cancelar</button>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Script exclusivo del perfil -->
+    <script type="module" src="js/perfil.js"></script>
+</body>
+</html>

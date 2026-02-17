@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guía - PixelSnap Mini Instagram</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #667eea;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 1.1rem;
+        }
+        
+        h2 {
+            color: #764ba2;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #667eea;
+        }
+        
+        h3 {
+            color: #555;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 10px;
+        }
+        
+        .feature-title {
+            font-weight: bold;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+        }
+        
+        .feature-desc {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+        
+        .code-block {
+            background: #2d2d2d;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            overflow-x: auto;
+            margin: 15px 0;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+        }
+        
+        .folder-structure {
+            background: #f5f5f5;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Courier New', monospace;
+            margin: 15px 0;
+        }
+        
+        .step {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 15px 0;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+        
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        
+        ul {
+            margin-left: 20px;
+            margin-top: 10px;
+        }
+        
+        li {
+            margin: 8px 0;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            margin: 10px 5px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .center {
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .alert {
+            background: #fff3cd;
+            border: 2px solid #ffc107;
+            color: #856404;
+            padding: 15px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border-color: #28a745;
+            color: #155724;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+        
+        tr:hover {
+            background: #f5f5f5;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>📸 PixelSnap - Mini Instagram</h1>
+        <p class="subtitle">Aprende Fetch API con los 4 métodos HTTP: GET, POST, PUT, DELETE</p>
+        
+        <div class="alert alert-success">
+            <strong>✅ Proyecto Completado!</strong> Todos los archivos están listos para usar.
+        </div>
+        
+        <h2>🎯 ¿Qué es este proyecto?</h2>
+        <p>
+            PixelSnap es una aplicación web que simula Instagram, diseñada para enseñarte cómo funcionan 
+            las <span class="highlight">APIs REST</span> y los métodos HTTP usando <span class="highlight">Fetch</span> en JavaScript.
+        </p>
+        
+        <div class="feature-grid">
+            <div class="feature-card">
+                <div class="feature-icon">📥</div>
+                <div class="feature-title">GET</div>
+                <div class="feature-desc">Obtener publicaciones</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">📤</div>
+                <div class="feature-title">POST</div>
+                <div class="feature-desc">Crear publicaciones</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">✏️</div>
+                <div class="feature-title">PUT</div>
+                <div class="feature-desc">Editar publicaciones</div>
+            </div>
+            <div class="feature-card">
+                <div class="feature-icon">🗑️</div>
+                <div class="feature-title">DELETE</div>
+                <div class="feature-desc">Eliminar publicaciones</div>
+            </div>
+        </div>
+        
+        <h2>📁 Estructura del Proyecto</h2>
+        <div class="folder-structure">
+mini-instagram/
+├── index.html              ← Página principal
+├── README.md               ← Documentación
+├── GUIA.html              ← Esta guía
+│
+├── css/                   ← Todos los estilos
+│   ├── variables.css      ← Colores, fuentes, espaciado
+│   ├── reset.css          ← Reset CSS
+│   ├── animations.css     ← Animaciones
+│   ├── components.css     ← Estilos de componentes
+│   └── main.css           ← Layout principal
+│
+└── js/                    ← Todo el JavaScript
+    ├── app.js             ← Archivo principal
+    ├── services/
+    │   └── api.js         ← Peticiones HTTP (GET/POST/PUT/DELETE)
+    ├── components/
+    │   ├── Post.js        ← Componente de publicación
+    │   ├── Modal.js       ← Componente modal
+    │   └── Toast.js       ← Notificaciones
+    └── utils/
+        └── helpers.js     ← Funciones útiles
+        </div>
+        
+        <h2>🚀 Cómo Empezar</h2>
+        
+        <div class="step">
+            <span class="step-number">1</span>
+            <strong>Abrir con Servidor Local</strong>
+            <p>Elige una de estas opciones para iniciar un servidor:</p>
+            <div class="code-block">
+# Con Python 3
+python -m http.server 8000
+
+# Con Node.js
+npx http-server
+
+# Con PHP
+php -S localhost:8000
+            </div>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">2</span>
+            <strong>Abrir en el Navegador</strong>
+            <p>Visita: <code>http://localhost:8000</code></p>
+        </div>
+        
+        <div class="step">
+            <span class="step-number">3</span>
+            <strong>Explorar la Aplicación</strong>
+            <p>Prueba todas las funcionalidades:</p>
+            <ul>
+                <li>Ver publicaciones existentes (GET)</li>
+                <li>Crear una nueva publicación (POST)</li>
+                <li>Editar una publicación (PUT)</li>
+                <li>Eliminar una publicación (DELETE)</li>
+            </ul>
+        </div>
+        
+        <h2>💻 Explicación de Fetch</h2>
+        
+        <h3>GET - Obtener Datos</h3>
+        <div class="code-block">
+const response = await fetch('https://api.ejemplo.com/posts', {
+    method: 'GET',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+});
+const data = await response.json();
+console.log(data); // Array de posts
+        </div>
+        
+        <h3>POST - Crear Datos</h3>
+        <div class="code-block">
+const response = await fetch('https://api.ejemplo.com/posts', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        author: 'Juan',
+        caption: 'Mi primera publicación',
+        imageUrl: 'https://...'
+    })
+});
+const newPost = await response.json();
+        </div>
+        
+        <h3>PUT - Actualizar Datos</h3>
+        <div class="code-block">
+const response = await fetch('https://api.ejemplo.com/posts/123', {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+        author: 'Juan Actualizado',
+        caption: 'Descripción modificada'
+    })
+});
+const updatedPost = await response.json();
+        </div>
+        
+        <h3>DELETE - Eliminar Datos</h3>
+        <div class="code-block">
+const response = await fetch('https://api.ejemplo.com/posts/123', {
+    method: 'DELETE',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+});
+// Post eliminado
+        </div>
+        
+        <h2>🎨 Componentes Reutilizables</h2>
+        
+        <table>
+            <thead>
+                <tr>
+                    <th>Componente</th>
+                    <th>Archivo</th>
+                    <th>Función</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Post</strong></td>
+                    <td>js/components/Post.js</td>
+                    <td>Renderiza cada publicación</td>
+                </tr>
+                <tr>
+                    <td><strong>Modal</strong></td>
+                    <td>js/components/Modal.js</td>
+                    <td>Ventana para crear/editar</td>
+                </tr>
+                <tr>
+                    <td><strong>Toast</strong></td>
+                    <td>js/components/Toast.js</td>
+                    <td>Notificaciones flotantes</td>
+                </tr>
+                <tr>
+                    <td><strong>API Service</strong></td>
+                    <td>js/services/api.js</td>
+                    <td>Maneja todas las peticiones HTTP</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <h2>🧪 Probar las Operaciones CRUD</h2>
+        
+        <p>Abre la <strong>Consola del Navegador</strong> (F12) y ejecuta:</p>
+        <div class="code-block">
+window.demonstrateCRUD()
+        </div>
+        
+        <p>Esto ejecutará automáticamente:</p>
+        <ol>
+            <li>GET - Obtener todos los posts</li>
+            <li>POST - Crear un nuevo post</li>
+            <li>PUT - Actualizar ese post</li>
+            <li>DELETE - Eliminar el post</li>
+        </ol>
+        
+        <div class="alert">
+            <strong>📝 Nota:</strong> Este proyecto usa <strong>JSONPlaceholder</strong> como API de prueba. 
+            Los datos NO se guardan permanentemente, pero funciona perfecto para aprender.
+        </div>
+        
+        <h2>✨ Características del Diseño</h2>
+        
+        <ul>
+            <li>🎨 <strong>Paleta Retro-Futurista:</strong> Colores vibrantes y gradientes</li>
+            <li>✨ <strong>Animaciones Suaves:</strong> Transiciones y efectos visuales</li>
+            <li>📱 <strong>Responsive:</strong> Funciona en móviles, tablets y desktop</li>
+            <li>🎭 <strong>Efecto Polaroid:</strong> Tarjetas con estilo de fotos instantáneas</li>
+            <li>⚡ <strong>Micro-interacciones:</strong> Hover effects y feedback visual</li>
+        </ul>
+        
+        <h2>🎓 Lo que Aprenderás</h2>
+        
+        <ul>
+            <li>✅ Cómo funciona Fetch API</li>
+            <li>✅ Los 4 métodos HTTP principales (CRUD)</li>
+            <li>✅ Async/Await para código asíncrono</li>
+            <li>✅ Arquitectura modular en JavaScript</li>
+            <li>✅ ES6 Modules (import/export)</li>
+            <li>✅ Manipulación del DOM</li>
+            <li>✅ Event Listeners y manejo de eventos</li>
+            <li>✅ CSS avanzado (Grid, Flexbox, Variables)</li>
+            <li>✅ Diseño responsive</li>
+            <li>✅ Patrones de diseño frontend</li>
+        </ul>
+        
+        <h2>🔧 Próximos Pasos</h2>
+        
+        <p>Mejoras que puedes implementar para practicar más:</p>
+        <ul>
+            <li>🔐 Agregar sistema de autenticación</li>
+            <li>❤️ Implementar likes en publicaciones</li>
+            <li>💬 Sistema de comentarios</li>
+            <li>📤 Carga real de imágenes (no solo URLs)</li>
+            <li>🔍 Búsqueda y filtros</li>
+            <li>♾️ Scroll infinito</li>
+            <li>💾 Crear tu propio backend con Node.js</li>
+        </ul>
+        
+        <div class="center">
+            <h2>🎉 ¡Todo Listo!</h2>
+            <p>Explora el código, experimenta y aprende haciendo.</p>
+            <a href="index.html" class="btn">🚀 Abrir Aplicación</a>
+            <a href="README.md" class="btn">📖 Ver README</a>
+        </div>
+        
+        <hr style="margin: 40px 0; border: none; border-top: 2px solid #eee;">
+        
+        <p style="text-align: center; color: #999;">
+            Desarrollado con ❤️ para aprender JavaScript moderno y APIs REST
+        </p>
+    </div>
+</body>
+</html>
