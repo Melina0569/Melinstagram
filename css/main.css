@@ -277,10 +277,33 @@
         right: var(--spacing-sm);
     }
 
+    .modal {
+        padding: var(--spacing-md);
+    }
+
     .modal-content {
         padding: var(--spacing-lg);
-        margin: var(--spacing-md);
+        margin: 0 auto;
         max-height: 95vh;
+        max-width: calc(100vw - var(--spacing-md) * 2);
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .post-form {
+        width: 100%;
+    }
+
+    .form-group {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .form-input,
+    .form-textarea {
+        width: 100%;
+        box-sizing: border-box;
+        display: block;
     }
 
     .modal-title {
